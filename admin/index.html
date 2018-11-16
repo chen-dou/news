@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset='utf-8'/>
+	<title>后端系统</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+	<link rel="stylesheet" type="text/css" href="../css/bootstrap.min.css">
+	<script type="text/javascript" src='../js/jquery-3.2.1.min.js'></script>
+	<script type="text/javascript" src='../js/bootstrap.min.js'></script>
+	<style type="text/css">
+		*{
+			margin:0;
+			padding:0;
+		}
+		a:focus, a:hover{
+			text-decoration:none;
+		}
+		ul{
+			margin:0;
+		}
+		header .container-fluid{
+			height:50px;
+			background:#373d41;
+		}
+		header .container-fluid .info{
+			width:100%;
+			margin:0;
+			line-height:50px;
+			display:flex;
+			justify-content:space-between;
+			color:#fff;
+		}
+		header .container-fluid .info .user a{
+			color:#fff;
+		}
+		nav{
+			width:180px;
+			background:#333744;
+			position:fixed;
+			top:50px;
+			bottom:0;
+		}
+		nav .sidebar li>a{
+			padding-left:20px;
+			color:#fff;
+			display:block;
+			line-height:40px;
+			color:#fff;
+			background:#42485b;
+		}
+		nav .sidebar li>a span{
+			margin-right:8px;
+			transform:scale(0.6);
+			display:inline-block;
+		}
+		nav .sidebar li>a:hover{
+			background:#00c1de;
+		}
+		nav .sidebar li .list a{
+			display:block;
+			line-height:40px;
+			color:#fff;
+			padding-left:20px;
+		}
+		nav .sidebar li .list a:hover{
+			background:#4a5064;
+		}
+		nav .sidebar .panel{
+			margin-bottom:0;
+			background:transparent;
+			border:none;
+			border-radius:0;
+			box-shadow:none;	
+		}
+		nav .sidebar li .list span{
+			margin-right:8px;
+			display:inline-block;
+			transform:scale(0.6);
+			vertical-align:middle;
+		}
+		section{
+			position:fixed;
+			left:180px;
+			top:50px;
+			right:0;
+			bottom:0;
+			background:#eaedf1;
+		}
+		section .showview{
+			width:100%;
+			height:100%;	
+		}
+		section .showview iframe{
+			width:100%;
+			height:100%;
+		}
+
+	</style>
+	<script type="text/javascript">
+		$(function(){
+			$('.list').on('show.bs.collapse', function (){
+  				$(this).siblings().find(".glyphicon").css("transform",'scale(0.6) rotate(90deg)');
+			})
+			$('.list').on('hide.bs.collapse', function (){
+  				$(this).siblings().find(".glyphicon").css("transform",'scale(0.6) rotate(0deg)');
+			})
+		})
+	</script>
+</head>
+<body>
+	<header>
+		<div class="container-fluid">
+			<div class="info">
+				<div class="logo">后台管理系统</div>
+				<div class="user"><span>欢迎您，亮亮</span><a href="">&nbsp;&nbsp;&nbsp;退出</a></div>
+			</div>
+		</div>
+	</header>
+	<div id="main">
+		<nav>
+			<div class="sidebar">
+				<ul id="accordion">
+					<li style="color:#fff" class="panel">
+						<a data-toggle="collapse" data-parent="#accordion" href="#item1"><span class="glyphicon glyphicon-triangle-right"></span>栏目管理</a>
+						<div class="list collapse" id='item1'>
+							<a href="http://www.tmall.com" target="show"><span class="glyphicon glyphicon-tags"></span>栏目列表</a>
+						</div>
+					</li>
+					<li style="color:#fff" class="panel">
+						<a data-toggle="collapse" data-parent="#accordion" href="#item2"><span class="glyphicon glyphicon-triangle-right"></span>标签管理</a>
+						<div class="list collapse" id='item2'>
+							<a href="http://www.jd.com" target="show"><span class="glyphicon glyphicon-tags"></span>标签列表</a>
+						</div>
+					</li>
+					<li style="color:#fff" class="panel panel-default">
+						<a data-toggle="collapse" data-parent="#accordion" href="#item3"><span class="glyphicon glyphicon-triangle-right"></span>文章管理</a>
+						<div class="list collapse" id='item3'>
+							<a href=""><span class="glyphicon glyphicon-tags"></span>文章列表</a>
+							<a href=""><span class="glyphicon glyphicon-tags"></span>回收站</a>
+						</div>
+					</li>
+				</ul>
+			</div>		
+		</nav>
+		<section>
+			<div class="showview">
+				<iframe  name="show" frameborder=0 class="embed-responsive-item" src="./list.html"></iframe>
+			</div>	
+		</section>
+	</div>
+</body>
+</html>

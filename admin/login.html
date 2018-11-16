@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset='utf-8'/>
+	<title>登录页</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+	<link rel="stylesheet" type="text/css" href="../css/bootstrap.min.css">
+	<script type="text/javascript" src='../js/jquery-3.2.1.min.js'></script>
+	<script type="text/javascript" src='../js/bootstrap.min.js'></script>
+	<script type="text/javascript">
+		$(function(){
+			$('.modal').modal({
+				show:true,
+				keyboard:false,
+				backdrop:'static',
+			});
+		})
+	</script>
+</head>
+<body>
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h4 class="modal-title" id="exampleModalLabel">Login</h4>
+      </div>
+      <div class="modal-body">
+        <form action='http://www.baidu.com' id='login'>
+          <div class="form-group">
+            <label  class="control-label">username:</label>
+            <input type="text" class="form-control">
+          </div>
+          <div class="form-group">
+            <label class="control-label">password:</label>
+            <input type="text" class="form-control">
+          </div>
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button form='login' type='submit' class="btn btn-primary">login</button>
+      </div>
+    </div>
+  </div>
+</div>
+</body>
+</html>

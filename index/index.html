@@ -1,0 +1,402 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset='utf-8'/>
+	<title>前端</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+	<link rel="stylesheet" type="text/css" href="../css/bootstrap.min.css">
+	<script type="text/javascript" src='../js/jquery-3.2.1.min.js'></script>
+	<script type="text/javascript" src='../js/bootstrap.min.js'></script>
+	<style type="text/css">
+	*{
+		margin:0;
+		padding:0;
+	}
+	ol,ul{
+		margin-bottom:0;
+	}
+	li{
+		list-style:none;
+	}
+	a:focus, a:hover{
+		text-decoration:none;
+	}
+	body{
+		background:#ebebeb;
+	}
+	.navbar-default .navbar-toggle:focus, .navbar-default .navbar-toggle:hover{
+		background:transparent;
+	}
+	header .banner{
+		width:100%;
+		background:url('./images/banner.jpg') no-repeat center 20%;
+		background-size:cover;
+		height:200px;
+	}
+	nav.navbar-default{
+		background:#fff;
+		border-top:1px solid #ebebeb;
+		border-bottom:2px solid #e1e1e1;
+	}
+	nav .container li a{
+		line-height: 58px;
+		padding:0 21px;
+		display:block;
+		color:#505050;
+	}
+	.navbar{
+		margin-bottom:35px;
+	}
+	nav .container li a:hover{
+		color:#e67e22;
+	}
+	nav .container li.on{
+		border-bottom:2px solid #e67e22;
+		margin-bottom:-2px;
+	}
+
+	@media (min-width: 768px) {
+		nav .container ul{
+			display:flex;
+			justify-content:center;
+		}	
+	}
+	main .list .item{
+		background:#fff;
+		padding:35px;
+		margin-bottom:35px;
+	}
+	main .list .more{
+		text-align:center;
+		margin-bottom:35px;
+	}
+	main .list .item .header{
+		text-align:center;
+	}
+	main .list .item .header .info{
+		margin-top:14px;
+	}
+	main .list .item .header .info span{
+		color:#e67e22;
+		margin-right:7px;
+	}
+	main .list .item .content{
+		margin-top:30px;
+	}
+	main .list .item .content .des{
+		margin:30px 0;
+		color:#444443;
+		line-height:1.62em;
+		font-size:18px;
+	}
+	main .list .item .bottom{
+		margin-top:30px;
+		border-top:1px solid #ebebeb;
+		padding-top:21px;
+	}
+	main .list .item .bottom .glyphicon{
+		color:#bbb;
+		margin-right:10px;
+		font-size:14px;
+	}
+	main .list .item .bottom .tag dl a{
+		font-size:14px;
+		color:#959595;
+
+	}
+	main .list .item .bottom .tag dl a:hover{
+		color:#e67e22;
+	}
+	main .list .item .bottom .tag dl dt{
+		margin-left:7px;
+	}
+	main .list .item .bottom .tag dl{
+		display:flex;
+		margin-bottom:0;
+	}
+	main .aside>div{
+		padding:21px 30px;
+		background:#fff;
+		margin-bottom:35px;
+	}
+	main .aside dl dt{
+		font-size:20px;
+		font-weight:normal;
+		border-bottom:1px solid #ebebeb;
+		margin-bottom:21px;
+	}
+	main .aside dl dt span{
+		display:inline-block;
+		padding-right:50px;
+		border-bottom:1px solid #e67e22;
+		padding-bottom:7px;
+		margin-bottom:-1px;
+	}
+	main .aside .recent dl dd{
+		margin-bottom:10px;
+	}
+	main .aside .recent dl dd a{
+		color:#505050;
+		display:block;
+	}
+	main .aside .recent dl dd:hover a{
+		color:#e67e22;
+	}
+	main .aside .tag dl{
+		overflow:hidden;
+		margin-bottom:0;
+	}
+	main .aside .tag dl dd{
+		float:left;
+		margin:0 7px 7px 0;
+	}
+	main .aside .tag dl dd a{
+		display:block;
+		border:1px solid #ebebeb;
+		padding:2px 7px;
+		color:#959595;
+		transition:all .2s;
+	}
+	main .aside .tag dl dd a:hover{
+		color:#fff;
+		background:#e67e22;
+		border:1px solid #e67e22;
+	}
+	footer{
+		background:#202020;
+		padding:35px 0;
+	}
+	footer .col-sm-4{
+		padding-left:45px;
+		padding-right:45px;
+		overflow:hidden;
+	}
+	footer .col-sm-4 dl dt{
+		border-bottom:1px solid #303030;
+		color:#fff;
+		font-size:20px;
+		margin-bottom:21px;
+	}
+	footer .col-sm-4 dl dt span{
+		font-weight:normal;
+		display:inline-block;
+		width:90px;
+		border-bottom:1px solid #e67e22;
+		padding-bottom:7px;
+		margin-bottom:-1px;
+	}
+	footer .col-sm-4 dl dd{
+		float:left;
+	}
+	footer .col-sm-4 dl dd a{
+		display:block;
+		padding:2px 7px;
+		color:#959595;
+		margin:0 7px 7px 0;
+		transition:all 0.2;
+	}
+	footer .tag dl dd a{
+		border:1px solid #303030;
+	}
+	footer .tag dl dd a:hover{
+		color:#ffffff;
+		border:1px solid #e67e22;
+		background:#e67e22;
+	}
+	footer .nav dl dd a:hover,footer .flink dl dd a:hover{
+		color:#e67e22;
+	}
+	</style>
+</head>
+<body>
+	<header>
+		<div class="banner"></div>	
+	</header>
+	<nav class='navbar navbar-default'>
+		<div class="container">
+			<div class="navbar-header">
+				<button type="button" class="navbar-toggle" data-toggle="collapse"
+						data-target="#example-navbar-collapse">
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+				</button>
+			</div>
+			<div class="row collapse navbar-collapse" id="example-navbar-collapse">
+				<ul>
+					<li class='on'><a href="">首页</a></li>
+					<li><a href="">论坛</a></li>
+					<li><a href="">快捷手册</a></li>
+					<li><a href="">中文网</a></li>
+					<li><a href="">下载</a></li>
+					<li><a href="">关于</a></li>
+				</ul>
+			</div>
+		</div>
+	</nav>
+	<main class='container'>
+		<div class="row">
+			<section class='col-md-8'>
+				<div class="list">
+					<ul>
+						<li class="item">
+							<div class="header">
+								<h1>主题模板和博客支持本地化了！</h1>
+								<div class="info">作者：<span>王赛</span> •2018年1月22日</div>
+							</div>
+							<div class="content">
+								<div class="pic"><img width='100%' src='./images/list.jpg'></div>
+								<div class="des">
+									Ghost 从一开始就支持响应式 Web 使用体验，但是我们今天仍然向前迈出了一大步 -- 推出 Android 平台原生 APP ！ 我们一直试图为 Ghost 用户构建一个可靠的移动端 Web 体验，但不可避免地，它在它所能做的事情上仍然是相当受限的。即便是在 2017 年的
+								</div>
+								<div class="btn">
+									<a  class="btn btn-warning">阅读全文</a>
+								</div>
+							</div>
+							<div class="bottom">
+								<div class="tag">
+									<dl>
+										<dt><span class='glyphicon glyphicon-folder-open'></span></dt>
+										<dd><a href="">Android，</a></dd>
+										<dd><a href="">客户端</a></dd>
+									</dl>
+								</div>
+							</div>
+						</li>
+						<li class="item">
+							<div class="header">
+								<h1>主题模板和博客支持本地化了！</h1>
+								<div class="info">作者：<span>王赛</span> •2018年1月22日</div>
+							</div>
+							<div class="content">
+								<div class="pic"><img width='100%' src='./images/list.jpg'></div>
+								<div class="des">
+									Ghost 从一开始就支持响应式 Web 使用体验，但是我们今天仍然向前迈出了一大步 -- 推出 Android 平台原生 APP ！ 我们一直试图为 Ghost 用户构建一个可靠的移动端 Web 体验，但不可避免地，它在它所能做的事情上仍然是相当受限的。即便是在 2017 年的
+								</div>
+								<div class="btn">
+									<a  class="btn btn-warning">阅读全文</a>
+								</div>
+							</div>
+							<div class="bottom">
+								<div class="tag">
+									<dl>
+										<dt><span class='glyphicon glyphicon-folder-open'></span></dt>
+										<dd><a href="">Android，</a></dd>
+										<dd><a href="">客户端</a></dd>
+									</dl>
+								</div>
+							</div>
+						</li>
+						<li class="item">
+							<div class="header">
+								<h1>主题模板和博客支持本地化了！</h1>
+								<div class="info">作者：<span>王赛</span> •2018年1月22日</div>
+							</div>
+							<div class="content">
+								<div class="pic"><img width='100%' src='./images/list.jpg'></div>
+								<div class="des">
+									Ghost 从一开始就支持响应式 Web 使用体验，但是我们今天仍然向前迈出了一大步 -- 推出 Android 平台原生 APP ！ 我们一直试图为 Ghost 用户构建一个可靠的移动端 Web 体验，但不可避免地，它在它所能做的事情上仍然是相当受限的。即便是在 2017 年的
+								</div>
+								<div class="btn">
+									<a  class="btn btn-warning">阅读全文</a>
+								</div>
+							</div>
+							<div class="bottom">
+								<div class="tag">
+									<dl>
+										<dt><span class='glyphicon glyphicon-folder-open'></span></dt>
+										<dd><a href="">Android，</a></dd>
+										<dd><a href="">客户端</a></dd>
+									</dl>
+								</div>
+							</div>
+						</li>
+					</ul>
+					<div class="more"><button type="button" class="btn btn-warning">加载更多...</button</div>
+				</div>	
+			</section>
+			<section class='aside col-md-4'>
+				<div class="recent">
+					<dl>
+						<dt>
+							<span>最新</span>
+						</dt>
+						<dd><a href="">测试1</a></dd>
+						<dd><a href="">测试1</a></dd>
+						<dd><a href="">测试1</a></dd>
+					</dl>
+				</div>
+				<div class="tag">
+					<dl>
+						<dt>
+							<span>标签云</span>
+						</dt>
+						<dd><a href="">客户端</a></dd>
+						<dd><a href="">Android</a></dd>
+						<dd><a href="">jQuery</a></dd>
+						<dd><a href="">Ghost 0.7 版本</a></dd>
+						<dd><a href="">开源</a></dd>
+						<dd><a href="">助手函数</a></dd>
+						<dd><a href="">导航</a></dd>
+						<dd><a href="">自定义页面</a></dd>
+						<dd><a href="">静态页面</a></dd>
+						<dd><a href="">Roon.io</a></dd>
+						<dd><a href="">又拍云存储</a></dd>
+						<dd><a href="">Handlebars</a></dd>
+						<dd><a href="">邮件</a></dd>
+						<dd><a href="">快捷键</a></dd>
+						<dd><a href="">用户指南</a></dd>
+					</dl>
+				</div>
+			</section>
+		</div>
+	</main>
+	<footer>
+		<div class="container">
+			<div class="row">
+				<div class='col-sm-4 nav'>
+					<dl>
+						<dt><span>导航</span></dt>
+						<dd><a href="">首页</a></dd>
+						<dd><a href="">论坛</a></dd>
+						<dd><a href="">快捷手册</a></dd>
+						<dd><a href="">中文文档</a></dd>
+						<dd><a href="">下载</a></dd>
+						<dd><a href="">关于</a></dd>
+					</dl>
+				</div>
+				<div class='col-sm-4 tag'>
+					<dl>
+						<dt>
+							<span>标签云</span>
+						</dt>
+						<dd><a href="">客户端</a></dd>
+						<dd><a href="">Android</a></dd>
+						<dd><a href="">jQuery</a></dd>
+						<dd><a href="">Ghost 0.7 版本</a></dd>
+						<dd><a href="">开源</a></dd>
+						<dd><a href="">助手函数</a></dd>
+						<dd><a href="">导航</a></dd>
+						<dd><a href="">自定义页面</a></dd>
+						<dd><a href="">静态页面</a></dd>
+						<dd><a href="">Roon.io</a></dd>
+						<dd><a href="">又拍云存储</a></dd>
+						<dd><a href="">Handlebars</a></dd>
+						<dd><a href="">邮件</a></dd>
+						<dd><a href="">快捷键</a></dd>
+						<dd><a href="">用户指南</a></dd>
+					</dl>	
+				</div>
+				<div class='col-sm-4 flink'>
+					<dl>
+					<dt><span>友链</span></dt>
+						<dd><a href="">阿里云</a></dd>
+						<dd><a href="">七牛云</a></dd>
+						<dd><a href="">又拍云</a></dd>
+					</dl>	
+				</div>		
+			</div>
+		</div>
+	</footer>
+</body>
+</html>
